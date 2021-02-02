@@ -1,4 +1,27 @@
+function formatDate(timestamp) {
+    let date = new Date (timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 5) {
+    minutes = `0${minutes}`;
+  }
 
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
+  let weekday = days[date.getDay()];
+  return `${weekday} | ${hour}:${minutes}`;
+}
 
 function displayWeather(response){
     let cityName = document.querySelector("#city");
@@ -12,7 +35,10 @@ function displayWeather(response){
     humidityValue.innerHTML= Math.round(response.data.main.humidity);
     windValue.innerHTML= Math.round(response.data.wind.speed);
 
-console.log(response.data);
+    let currentDate = document.querySelector("#currenTime");
+    currentDate.innerHTML = formatDate(response.data.dt * 1000);
+
+    console.log(response.data);
 }
 
 
