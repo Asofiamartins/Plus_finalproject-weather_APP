@@ -43,20 +43,19 @@
       <div class="infocity">
        
         <div class="row align-items-end">
-           
              <div class="col-6" id="weatherCity">
-              <h1>Lisbon</h1>
+              <h1 id="city"></h1>
               <p>
-                <span id="currenTime">Sunday | 17:00 </span>
+                <span id="currenDate">Sunday</span> |<span id="currenTime"></span> 17:00 </span>
                 <br>
-                <span id="currentDescription">Clear</span>
+                <span id="currentDescription"></span>
               </p>
               <p></p>
-              <span id="temperature">19 </span><span class="units">ºC|ºF</span></p>
+              <span id="temperature"></span><span class="units">ºC|ºF</span></p>
               <p>
-              Humidity: 63%
+              Humidity: <span id="humidity"></span>%
               <br />
-              Wind: 11km/h
+              Wind: <span id="wind"></span> km/h
               </p>
             </div>
            
@@ -113,7 +112,11 @@
           </div>
         </div>
       </div>
-      
+
+      <footer> <a href="https://github.com/Asofiamartins/finalproject-weather_APP" target="_blank"
+        >Open-source code</a
+      >
+      by <a href="http://www.linkedin.com/in/asofia-martins" target="_blank">Sofia Martins</a> </footer>
     </div>
     
     <script src="src/script.js"></script>

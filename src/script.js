@@ -1,7 +1,18 @@
-function displayWeather(response){
-    console.log(response.data);
-let temperatureValue = ``;
 
+
+function displayWeather(response){
+    let cityName = document.querySelector("#city");
+    let temperatureValue = document.querySelector("#temperature");
+    let weatherDescription = document.querySelector("#currentDescription");
+    let humidityValue =document.querySelector("#humidity");
+    let windValue = document.querySelector("#wind");
+    cityName.innerHTML= response.data.name;
+    temperatureValue.innerHTML= Math.round(response.data.main.temp);
+    weatherDescription.innerHTML= response.data.weather[0].description;
+    humidityValue.innerHTML= Math.round(response.data.main.humidity);
+    windValue.innerHTML= Math.round(response.data.wind.speed);
+
+console.log(response.data);
 }
 
 
