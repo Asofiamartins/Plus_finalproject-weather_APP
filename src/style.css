@@ -1,0 +1,115 @@
+body {
+  padding: 30px;
+  font-family: "Roboto", sans-serif;
+  top: 0px;
+  left: 0px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 700px;
+  top: 60px;
+  font-size: 26px;
+  line-height: 28px;
+  text-align: left;
+}
+h2 {
+  font-weight: 700px;
+  font-size: 26px;
+  line-height: 20px;
+  text-align: left;
+}
+p {
+  line-height: 20px;
+}
+button {
+  border-radius: 5px;
+  border: 1px solid #ffd460;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+button:hover {
+  border-radius: 5px;
+  border: 0.5px solid #ffd460;
+  background: #ffd460;
+  margin: 0 5px;
+  padding: 5px 10px;
+  color: #ffffff;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 30px 80px;
+  border-radius: 20px;
+}
+
+.search-buttom {
+  padding: 0 0 0 55px;
+}
+.newcity-buttom {
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  background: #bdbdbd;
+  color: #ffffff;
+  padding: 4px 10px;
+}
+.newcity-buttom:hover {
+  border-radius: 5px;
+  border: 1px solid #757575;
+  background: rgba(189, 189, 189, 0.1);
+  color: black;
+  padding: 4px 10px;
+}
+.currentcity-buttom {
+  border-radius: 5px;
+  border: 1px solid #ffd460;
+  background: #ffd460;
+  color: #ffffff;
+  padding: 4px 10px;
+}
+.currentcity-buttom:hover {
+  border-radius: 5px;
+  border: 1px solid #ffd460;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+
+  padding: 4px 10px;
+}
+.weatherDescriptions {
+  font-weight: 100;
+  font-size: 15px;
+  text-align: center;
+}
+.infocity {
+  padding: 100px 0px 30px 0px;
+}
+.weatherIcon {
+  width: 60px;
+  margin: 20px;
+}
+.weatherButton {
+  padding-bottom: 30px;
+}
+#weatherCity {
+  padding-bottom: 22px;
+}
+
+#daymode {
+  border-style: solid 1px;
+  background-color: #b9cec9;
+}
+#nighmode {
+  border: 1px solid #0e1621;
+}
+#city-input {
+  width: 410px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+#hourly {
+  margin-left: 0;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container" id="daymode">
+
+      <div class="search-form">
+
+        <form id="search-form">
+
+          <div class="row">
+
+            <div class="col-8" id="">
+              <input id="city-input"type="text" placeholder="The weather in ..." autofocus="on"/>
+            </div>
+            
+            <div class="col-4">
+              <input class="newcity-buttom" type="submit" value="New city" />
+              <input class="currentcity-buttom" type="submit" value="Current City" />
+            </div>
+        </div>
+    
+          
+        </form>
+      </div>
+
+      <div class="infocity">
+       
+        <div class="row align-items-end">
+           
+             <div class="col-6" id="weatherCity">
+              <h1>Lisbon</h1>
+              <p>
+                <span id="currenTime">Sunday | 17:00 </span>
+                <br>
+                <span id="currentDescription">Clear</span>
+              </p>
+              <p></p>
+              <span id="temperature">19 </span>ºC|ºF</p>
+              <p>
+              Humidity: 63%
+              <br />
+              Wind: 11km/h
+              </p>
+            </div>
+           
+           <div class="col-6" id="weatherIcon"> <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/004/680/original/tornado-01-01-01.png?1612196887" alt="Sunny">
+            </div>
+          </div>
+      
+      </div>
+      
+
+      <div class="weatherButton">
+        <button id="hourly">Hourly</button>
+        <button id="weekly">Weekly</button>
+      </div>
+      <br />
+      <div class="weatherDescriptions">
+        <div class="row" id="weatherDescription">
+          <div class="col" id="column1"> 
+            <span id="descriptionOne">Monday</span><br>
+             <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/004/666/original/clouds-01.png?1612194341" alt="Sun" class="weatherIcon" id="weatherIconOne"> 
+            <p> <span id="temperatureMaxOne">19</span> º |<span id="temperatureMinOne">10</span>º</p>
+          </div>
+
+          <div class="col" id="column2">
+            <span id="descriptionTwo">Tuesday</span><br>
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/004/680/original/tornado-01-01-01.png?1612196887" alt="Sun" class="weatherIcon" id="weatherIconTwo"> 
+            <p>
+            <span id="temperatureMaxTwo">19</span> º |<span id="temperatureMinTwo">10</span>º
+            </p>
+          </div>
+          <div class="col" id="column3">
+            <span id="descriptionThree">Wednesday</span><br>
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/004/683/original/windy-01-01.png?1612205159" alt="Sun" class="weatherIcon" id="weatherIconThree">  
+            <p>
+              <span id="temperatureMaxThree">19</span> º |<span id="temperatureMinThree">10</span>º
+            </p> 
+          </div>
+
+          <div class="col" id="column4">
+            <span id="descriptionFour">Thursday</span><br>
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/004/670/original/rainy-01.png?1612196275s" alt="Sun" class="weatherIcon" id="weatherIconFour">  
+            <p>
+             <span id="temperatureMaxFour">19</span> º |<span id="temperatureMinFour">10</span>º
+             </p>
+          </div>
+          <div class="col" id="column5">
+           <span id="descriptionFive">Friday</span><br>
+           <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/004/682/original/rainy-01-01.png?1612204980" alt="Sun" class="weatherIcon" id="weatherIconFive"> 
+           <p>
+            <span id="temperatureMaxFive">19</span> º |<span id="temperatureMinFive">10</span>º
+
+           </p>
+           
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <script src="src/script.js"></script>
+  </body>
+</html>
