@@ -1,6 +1,6 @@
-//this function is for current date
+//this function is for last updated date
 function formatDate(timestamp) {
-    let date = new Date (timestamp);
+  let date = new Date (timestamp);
   let hour = date.getHours();
   if (hour < 10) {
     hour = `0${hour}`;
@@ -42,20 +42,26 @@ function displayWeather(response){
     iconElement.setAttribute("alt",response.data.weather[0].description);
     currentDate.innerHTML = formatDate(response.data.dt * 1000);
 
-    console.log(response.data);
+}
+
+function search(city){
+let apiKey = "e49f4dac5b0d3a8c77d299a55302727f";
+let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayWeather); 
 }
 
 
+function handleSubmit(event){
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("New York");
 
 
 
 
 
-let apiKey = "e49f4dac5b0d3a8c77d299a55302727f";
-let city = "Aveiro"
-let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-
-
-
-axios.get(apiUrl).then(displayWeather); 
+let form = document.querySelector("#search-form")
+form.addEventListener("submit", handleSubmit);
