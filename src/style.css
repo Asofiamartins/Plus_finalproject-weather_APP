@@ -23,6 +23,7 @@ h2 {
 p {
   line-height: 24px;
 }
+
 button {
   border-radius: 5px;
   border: 1px solid #ffd460;
@@ -64,33 +65,37 @@ a:hover {
   margin: 0 auto;
   padding: 30px 30px 30px;
   border-radius: 20px;
+  border-style: solid 1px;
+  background-color: #b9cec9;
 }
 
-.search-buttom {
+.search-button {
   padding: 0 0 0 55px;
 }
-.newcity-buttom {
+
+.newcity-button {
   border-radius: 5px;
   border: 1px solid #bdbdbd;
   background: #bdbdbd;
   color: #ffffff;
   padding: 4px 10px;
 }
-.newcity-buttom:hover {
+.newcity-button:hover {
   border-radius: 5px;
   border: 1px solid #757575;
   background: rgba(189, 189, 189, 0.1);
   color: black;
   padding: 4px 10px;
 }
-.currentcity-buttom {
+
+.currentcity-button {
   border-radius: 5px;
   border: 1px solid #ffd460;
   background: #ffd460;
   color: #ffffff;
   padding: 4px 10px;
 }
-.currentcity-buttom:hover {
+.currentcity-button:hover {
   border-radius: 5px;
   border: 1px solid #ffd460;
   background: rgba(255, 255, 255, 0.1);
@@ -109,17 +114,20 @@ a:hover {
   width: 60px;
   margin: 20px;
   margin: 0 auto;
-
+  padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .weatherButton {
   padding-bottom: 30px;
   padding-top: 30px;
 }
+
 .units {
   position: relative;
   top: -12px;
 }
+
 .units a:focus {
   color: #ffd460;
   text-decoration: none;
@@ -144,13 +152,6 @@ a:hover {
   padding-bottom: 22px;
 }
 
-#daymode {
-  border-style: solid 1px;
-  background-color: #b9cec9;
-}
-#nighmode {
-  border: 1px solid #0e1621;
-}
 #city-input {
   width: 410px;
   height: 32px;
