@@ -66,31 +66,31 @@ a:hover {
   border-radius: 20px;
 }
 
-.search-buttom {
+.search-button {
   padding: 0 0 0 55px;
 }
-.newcity-buttom {
+.newcity-button {
   border-radius: 5px;
   border: 1px solid #bdbdbd;
   background: #bdbdbd;
   color: #ffffff;
   padding: 4px 10px;
 }
-.newcity-buttom:hover {
+.newcity-button:hover {
   border-radius: 5px;
   border: 1px solid #757575;
   background: rgba(189, 189, 189, 0.1);
   color: black;
   padding: 4px 10px;
 }
-.currentcity-buttom {
+.currentcity-button {
   border-radius: 5px;
   border: 1px solid #ffd460;
   background: #ffd460;
   color: #ffffff;
   padding: 4px 10px;
 }
-.currentcity-buttom:hover {
+.currentcity-button:hover {
   border-radius: 5px;
   border: 1px solid #ffd460;
   background: rgba(255, 255, 255, 0.1);

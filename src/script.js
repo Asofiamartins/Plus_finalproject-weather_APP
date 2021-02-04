@@ -1,4 +1,4 @@
-//this function is for last updated date
+//this function is for last updated date in weatherApi
 function formatDate(timestamp) {
   let date = new Date (timestamp);
   let hour = date.getHours();
@@ -25,6 +25,7 @@ function formatDate(timestamp) {
 }
 //this functions call API and shows weather descriptions
 function displayWeather(response){
+    console.log(response.data);
     let cityName = document.querySelector("#city");
     let temperatureValue = document.querySelector("#temperature");
     let weatherDescription = document.querySelector("#currentDescription");
@@ -43,24 +44,39 @@ function displayWeather(response){
     iconElement.setAttribute("src",`image/${response.data.weather[0].icon}.png`)
     iconElement.setAttribute("alt",response.data.weather[0].description);
     currentDate.innerHTML = formatDate(response.data.dt * 1000);
-
+    
 }
 
+// this function shows weather on default city
 function search(city){
 let apiKey = "e49f4dac5b0d3a8c77d299a55302727f";
 let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeather); 
 }
 
-
+//function when user search the city
 function handleSubmit(event){
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 
+// function for current city -> uses coords
+function showPosition(position) {
+  let apiKey = "e49f4dac5b0d3a8c77d299a55302727f";
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather); 
+}
+// funtion to get current coords
+function getPosition(event){
+event.preventDefault();
+navigator.geolocation.getCurrentPosition(showPosition)
+}
 
 
+//functions to convert units 
 function displayFahrenheitTemperature (event) {
 event.preventDefault();
  let fahrenheitTemperature = (celsiusTemperature * 9/5) + 32;
@@ -81,8 +97,10 @@ temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
 let celsiusTemperature = null;
 
+//Search Bar
 let form = document.querySelector("#search-form")
 form.addEventListener("submit", handleSubmit);
+
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
@@ -90,4 +108,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector ("#celsius-link");
 celsiusLink.addEventListener("click",displayCelsiusTemperature);
 
+
+let currentButton = document.querySelector("#currentcity-button");
+currentButton.addEventListener("click",getPosition);
 search("Lisbon");
