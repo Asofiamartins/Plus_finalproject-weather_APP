@@ -23,6 +23,22 @@ function formatDate(timestamp) {
   let weekday = days[date.getDay()];
   return `${weekday} | ${hour}:${minutes}`;
 }
+
+function formatHours(timestamp) {
+  let date = new Date (timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 5) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hour}:${minutes}`;
+}
+
+
 //this functions call API and shows weather descriptions
 function displayWeather(response){
     
@@ -48,7 +64,29 @@ function displayWeather(response){
 }
 
 function displayForecast(response) {
-console.log(response.data);
+  let forecastElement = document.querySelector("#weatherForecast");
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    let forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+          <div class="col-2" id="colForecast">
+            <span id="description">${formatHours(forecast.dt*1000)}</span><br/>
+            <img
+              src="image/${forecast.weather[0].icon}.png"
+              alt="${forecast.weather[0].description}"
+              class="weatherIcon"
+              id="weatherIcon"/>
+            <p>
+              <span id="temperatureMax">${Math.round(forecast.main.temp_max)}</span> º | 
+              <span id="temperatureMin">${Math.round(forecast.main.temp_min)}</span>º
+            </p>
+          </div>
+          `;
+  }
+
+
+
 
 }
 
@@ -59,9 +97,9 @@ let apiKey = "e49f4dac5b0d3a8c77d299a55302727f";
 let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeather); 
 
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 
-let apiUrl= `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayForecast);
 }
 
 //function when user search the city

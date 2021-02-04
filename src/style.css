@@ -98,26 +98,44 @@ a:hover {
 
   padding: 4px 10px;
 }
-.weatherForecast {
+#weatherForecast {
   font-weight: 100;
   font-size: 15px;
   text-align: center;
   padding-bottom: 30px;
 }
-.infocity {
-  padding: 100px 0px 30px 0px;
-}
+
 .weatherIcon {
   width: 60px;
   margin: 20px;
+  margin: 0 auto;
+
+  padding-bottom: 10px;
 }
 .weatherButton {
   padding-bottom: 30px;
+  padding-top: 30px;
 }
 .units {
   position: relative;
   top: -12px;
 }
+.units a:focus {
+  color: #ffd460;
+  text-decoration: none;
+}
+
+.units .active {
+  color: #ffd460;
+  font-weight: 500;
+  cursor: default;
+  text-decoration: none;
+}
+.units .active:hover {
+  color: #ffd460;
+  text-decoration: none;
+}
+
 #temperature {
   font-size: 30px;
   font-weight: 500;
@@ -150,19 +168,9 @@ a:hover {
 #currentDescription {
   text-transform: capitalize;
 }
-
-.units a:focus {
-  color: #ffd460;
-  text-decoration: none;
+#temperatureMax {
+  font-weight: bolder;
 }
 
-.units .active {
-  color: #ffd460;
-  font-weight: 500;
-  cursor: default;
-  text-decoration: none;
-}
-.units .active:hover {
-  color: #ffd460;
-  text-decoration: none;
+#colForecast {
 }
