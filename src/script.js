@@ -25,7 +25,7 @@ function formatDate(timestamp) {
 }
 //this functions call API and shows weather descriptions
 function displayWeather(response){
-    console.log(response.data);
+    
     let cityName = document.querySelector("#city");
     let temperatureValue = document.querySelector("#temperature");
     let weatherDescription = document.querySelector("#currentDescription");
@@ -47,11 +47,21 @@ function displayWeather(response){
     
 }
 
+function displayForecast(response) {
+console.log(response.data);
+
+}
+
+
 // this function shows weather on default city
 function search(city){
 let apiKey = "e49f4dac5b0d3a8c77d299a55302727f";
 let apiUrl= `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayWeather); 
+
+
+let apiUrl= `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayForecast);
 }
 
 //function when user search the city
