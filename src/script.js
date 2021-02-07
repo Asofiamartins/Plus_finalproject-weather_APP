@@ -149,4 +149,6 @@ celsiusLink.addEventListener("click",displayCelsiusTemperature);
 
 let currentButton = document.querySelector("#currentcity-button");
 currentButton.addEventListener("click",getPosition);
+
+
 search("Lisbon");
