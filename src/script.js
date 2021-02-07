@@ -1,15 +1,7 @@
 //this function is for last updated date in weatherApi
 function formatDate(timestamp) {
   let date = new Date (timestamp);
-  let hour = date.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 5) {
-    minutes = `0${minutes}`;
-  }
-
+  
   let days = [
     "Sunday",
     "Monday",
@@ -21,8 +13,9 @@ function formatDate(timestamp) {
   ];
 
   let weekday = days[date.getDay()];
-  return `${weekday} | ${hour}:${minutes}`;
+  return `${weekday} | ${formatHours(timestamp)}`;
 }
+
 
 function formatHours(timestamp) {
   let date = new Date (timestamp);
@@ -65,10 +58,11 @@ function displayWeather(response){
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#weatherForecast");
+  forecastElement.innerHTML = null;
   let forecast = null;
 
   for (let index = 0; index < 6; index++) {
-    let forecast = response.data.list[index];
+    forecast = response.data.list[index];
     forecastElement.innerHTML += `
           <div class="col-2" id="colForecast">
             <span id="description">${formatHours(forecast.dt*1000)}</span><br/>
@@ -84,10 +78,6 @@ function displayForecast(response) {
           </div>
           `;
   }
-
-
-
-
 }
 
 
