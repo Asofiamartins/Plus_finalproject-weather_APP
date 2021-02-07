@@ -113,7 +113,7 @@ a:hover {
 }
 
 .weatherButton {
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   padding-top: 30px;
 }
 
@@ -157,9 +157,7 @@ a:hover {
 #city {
   text-transform: capitalize;
 }
-#daily {
-  margin-left: 0;
-}
+
 #currentDescription {
   text-transform: capitalize;
 }
