@@ -26,21 +26,15 @@ p {
 
 button {
   border-radius: 5px;
-  border: 1px solid #ffd460;
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0 5px;
-  padding: 5px 10px;
-}
-button:hover {
-  border-radius: 5px;
   border: 0.5px solid #ffd460;
   background: #ffd460;
   margin: 0 5px;
   padding: 5px 10px;
   color: #ffffff;
 }
+
 footer {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   padding-top: 20px;
   padding-left: 10px;
