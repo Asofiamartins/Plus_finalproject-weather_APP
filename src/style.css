@@ -103,12 +103,6 @@ a:hover {
 
   padding: 4px 10px;
 }
-#weatherForecast {
-  font-weight: 100;
-  font-size: 15px;
-  text-align: center;
-  padding-bottom: 30px;
-}
 
 .weatherIcon {
   width: 60px;
@@ -163,7 +157,7 @@ a:hover {
 #city {
   text-transform: capitalize;
 }
-#hourly {
+#daily {
   margin-left: 0;
 }
 #currentDescription {
@@ -173,5 +167,9 @@ a:hover {
   font-weight: bolder;
 }
 
-#colForecast {
+#weatherForecast {
+  font-weight: 100;
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 30px;
 }
