@@ -34,8 +34,7 @@ function formatHours(timestamp) {
 
 //this functions call API and shows weather descriptions
 function displayWeather(response){
-    
-    let cityName = document.querySelector("#city");
+        let cityName = document.querySelector("#city");
     let temperatureValue = document.querySelector("#temperature");
     let weatherDescription = document.querySelector("#currentDescription");
     let humidityValue =document.querySelector("#humidity");
@@ -106,6 +105,9 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
   let apiUrl= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather); 
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 // funtion to get current coords
 function getPosition(event){
